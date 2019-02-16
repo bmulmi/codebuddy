@@ -1,0 +1,63 @@
+extends layout
+
+block content
+    .container
+        form.form-horizontal.col-md-8.col-sm-6.col-xs-4.offset-2.mt-4(method="post" action="mailer")
+            div#formtype
+                .form-radio
+                    input.ml-2.mr-1(type="radio" name="prefix" value="Mr" required)
+                    |Mr.
+                    input.ml-3.mr-1(type="radio" name="prefix" value="Mrs") 
+                    |Mrs.
+                    input.ml-3.mr-1(type="radio" name="prefix" value="Ms") 
+                    |Ms.
+                    input.ml-3.mr-1(type="radio" name="prefix" value="Dr") 
+                    |Dr.
+                
+                .form-group.my-2
+                    label.mx-2(for="firstname") First Name: 
+                    input.form-control(id="firstname" type="text" name="firstname" required autofocus) 
+                    label.mx-2(for="lastname") Last Name:
+                    input.form-control(id="lastname" type="text" name="lastname" required)
+                
+                .form-group.my-2
+                    label.mx-2(for="street") Street:
+                    input.form-control(id="street" type="text" name="street" required)
+                    label.mx-2(for="city") City:
+                    input.form-control(id="city" type="text" name="city" required)                   
+                
+                .form-group.my-2
+                    label.mx-2(for="state") State:
+                    select.form-control(name="state")
+                        option(selected="selected" value="") --
+                        option(value="NJ") NJ
+                        option(value="NY") NY
+                        option(value="PA") PA
+                        option(value="CT") CT
+
+                .form-group.my-2        
+                    label.mx-2(for="zip") ZIP:
+                    input.form-control(id="zip" type="text" name="zip" required)
+                    
+                .form-group.my-2
+                    label.mx-2(for="phone") Phone:
+                    input.form-control(id="phone" type="text" name="phone")
+                
+                .form-group.my-2
+                    label.mx-2(for="email") E-Mail:
+                    input.form-control(id="email" type="text" name="email")
+                
+                .form-radio
+                    input.ml-2.mr-1(type="radio" name="prefix" value="Beginner" required)
+                    |Beginner
+                    input.ml-3.mr-1(type="radio" name="prefix" value="Intermediate") 
+                    |Intermediate
+                    input.ml-3.mr-1(type="radio" name="prefix" value="Expert") 
+                    |Expert
+                
+            
+            button.btn.btn-primary.m-2(type="submit") Submit
+    
+    script.
+        $('#main-nav').append( "<li class = 'nav-item'> <a class = 'nav-link' id = 'login'> Login </li> ")
+        $('#login').attr('href', 'login')

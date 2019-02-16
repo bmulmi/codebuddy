@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    .containter 
+        .jumbotron
+            p.display-4.text-center Sign-in
+
+            form#login-form.text-center.form-horizontal.col-md-8.offset-2.mt-4(method = "post" action = "login")
+                div
+                    .form-group.my-2
+                        label.mx-2.control-label(for="username") Username:
+                        .col-lg-10.col-sm-4.col-xs-3.col-md-8.offset-lg-1.offset-sm-2 
+                            input.form-control(id="username" type="text" name="username" required autofocus)
+                    .form-group.my-2
+                        label.mx-2.control-label(for="password") Password:
+                        .col-lg-10.col-sm-4.col-xs-3.col-md-8.offset-lg-1.offset-sm-2
+                            input.form-control(id="password" type="password" name="password" required)
+                    .form-group.my-2
+                        .col-sm-10.offset-1 
+                            button.btn.btn-info.m-2(type="submit") Login
+    
+    script.
+        $('#main-nav').append( "<li class = 'nav-item'> <a class = 'nav-link' id = 'login'> Login </li> ")
+        $('#login').attr('href', 'login')

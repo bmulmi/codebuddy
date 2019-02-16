@@ -1,5 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container-fluid.p-0.m-0
+    .row
+      .col-3#searches
+        .jumbotron
+          input.form-control.mr-sm-2.col-12-sm.col-6.offset-3#search_name(placeholder='Search') 
+
+      .col-9#results
+        .jumbotron
+          .row 
+            each val, index in project
+              .col-3.m-3.p-3(class="projectGrid")
+                h3= val.title
+                p= val.description
+                p= val.languages
+              

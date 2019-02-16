@@ -1,8 +1,24 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html,body{
+    margin: 0;   
+    padding: 0; 
+    height: 100%;
+    width: 100%;
 }
 
-a {
-  color: #00B7FF;
+#mainbar{
+    height: 25%;
+}
+
+#searches, #results{
+    height: 100%;
+}
+
+#results.jumbotron{
+    padding: 0px;
+}
+
+.projectGrid{
+    border: grey 2px solid;
+    border-radius: 3px;
+    background-color: honeydew;
 }

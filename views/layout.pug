@@ -2,6 +2,23 @@ doctype html
 html
   head
     title= title
+    script(src="http://code.jquery.com/jquery-1.11.0.min.js")
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
     link(rel='stylesheet', href='/stylesheets/style.css')
+  
   body
-    block content
+    .container#mainbar  
+      nav
+        .sticky-top.navbar-expand-lg.navbar-light.bg-light
+          .d-flex.bd-highlight
+            a.p-2.navbar-brand(href="/") CodeBuddy
+
+            .p-2.flex-grow-1.bd-highlight.nav-item.col-12-sm
+            
+            a.p-2.bd-highlight.nav-item.col-12-sm.nav-link(href="/") Home
+  
+            a.p-2.bd-highlight.nav-item.col-12-sm.nav-link(href="/login") Login
+
+            a.p-2.bd-highlight.nav-item.col-12-sm.nav-link(href="/signup") SignUp       
+          
+      block content
