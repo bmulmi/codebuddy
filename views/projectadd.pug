@@ -1,0 +1,41 @@
+extends layout
+    
+block content
+  .form-style-10
+    h1 Add Project Description
+    form(action='/publishproject', method="POST")
+      .section
+        span 1
+        | Name & Email
+      .inner-wrap
+        label
+          | Full Name 
+          input(type='text', name='fullName')
+        label
+          | Email 
+          input(type='email', name='email')
+      .section
+        span 2
+        | Project Name & Description
+      .inner-wrap
+        label
+          | Project Name 
+          input(type='text', name='projectName')
+        label
+          | Category (eg: web app, android app etc) 
+          input(type='text', name='projectCategory')
+        label
+          | Description 
+          textarea(name='projectDescription', rows='4')
+      .section
+        span 3
+        | Languages & Frameworks
+      .inner-wrap
+        label
+          | Languages (space separated) 
+          input(type='text', name='languages')
+        label
+          | Frameworks (space separated) 
+          input(type='text', name='frameworks')
+      .button-section
+        input(type='submit', name='Sign Up', value='ADD')

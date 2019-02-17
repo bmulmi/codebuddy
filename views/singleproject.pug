@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  form(action="/emailsent" method="POST")#singleForm
+    .row
+      // Div for map
+      #thankyoudiv.col-sm
+          img(src='projectimage.png', alt='Project Image' height='90%' width='80%')
+      // Div for contact info
+      .col-sm
+        h3#contactInfoH Contact Information Submitted
+        ul.list-group.list-group-flush#contactList
+          li.list-group-item Name: #{detail.projectName}
+          li.list-group-item Category: #{detail.projectCategory}
+          li.list-group-item Description: #{detail.projectDescription}
+          li.list-group-item Languages: #{detail.languages}
+          li.list-group-item FrameWorks: #{detail.frameworks}
+          li.list-group-item
+            .button.btn.btn#messageLink Click to Send Message
+    .row#lastRow
+      .col-4
+          textarea#textarea(name="emailText", rows="7" cols='70' placeholder="Enter your message" )
+      .form-group.offset-6#submitButton
+        input(type='submit' value="Send Message")
+      

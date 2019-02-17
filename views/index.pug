@@ -1,18 +1,48 @@
 extends layout
 
 block content
-  .container-fluid.p-0.m-0
+  #mainContainer.container-fluid.p-0.m-0
     .row
-      .col-3#searches
-        .jumbotron
-          input.form-control.mr-sm-2.col-12-sm.col-6.offset-3#search_name(placeholder='Search') 
+      .col-2#searches
+        .jumbotron#searchJumbo
+          input.form-control#search_name(placeholder='Search')
 
-      .col-9#results
-        .jumbotron
-          .row 
-            each val, index in project
-              .col-3.m-3.p-3(class="projectGrid")
-                h3= val.title
-                p= val.description
-                p= val.languages
-              
+
+      .col-10#results
+        .jumbotron#jumboGrid
+            .row#gridBox 
+              each val, index in project
+                .col-3.m-4.p-3.card(class="projectGrid", data-detail=val)
+                  // img#gridImage(src='project.jpg', alt='Smiley face', width='100%', height='70')
+                  .card-body
+                    h3.card-title= val.projectName
+                    p
+                      .card-text= "Category: "+val.projectCategory
+                      .card-text= "Languages: "+val.languages
+                      .card-text= "Frameworks: "+val.frameworks
+                      
+  
+  
+  form#hiddenForm(type="hidden" action="/projectData", method="POST")
+    input(type="text", name="id", id="anup")
+  
+  script.
+    $("body").on("click", function(){
+      console.log("body clicked!");
+    })
+    $('#gridBox').on("click", ".projectGrid", function(e){
+      var data = $(this).data('detail');
+      data = JSON.stringify(data);
+      $("#anup").val(data);
+      $("#hiddenForm").submit();
+      console.log(data);8
+    })
+    
+    // $('.projectGrid').on("click", "body", function(){
+    //     console.log("clicked!");
+    //     // var data = this.id;
+    //     // console.log(data.projectName);
+    //     // console.log("clicked!");
+    //     // $("#anup").val(data);
+    //     // $("#hiddenForm").submit();
+    // })

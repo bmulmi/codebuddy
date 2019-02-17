@@ -1,0 +1,53 @@
+
+#thankyoudiv{
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* max-width: 100%; */
+}
+.list-group{
+  padding: 20px;
+}
+.list-group-item{
+  background-color: #f5f5f0;
+  padding: 20px;
+}
+
+
+#singleForm{
+  font-family: 'Spectral';
+  padding-top:10px;
+  background: #1F2833;
+  margin-top:5px;
+}
+
+#contactInfoH{
+  color: #66FCF1;
+  text-align:center;
+}
+
+#contactList{
+  background: #45a29e;
+}
+
+.list-group-item{
+  font-family: 'Lora';
+  background: #45a29e;
+}
+img{
+  margin:15px;
+}
+
+ul{
+  margin-right:20px;
+  color:#1F2833;
+}
+#textarea{
+  margin:10px;
+  width:100%;
+  display: inline-block;
+}
+
+#submitButton{
+
+  float:right;
+}
